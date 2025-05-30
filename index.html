@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="main-page-title">축하해! </h1>
+    
+    <div class="container">
+        <div class="photo-gallery">
+            <div class="main-photo">
+                <img id="display-photo" src="images/img01.png" alt="Main Wedding Photo">
+                <div class="image-title">
+                    <p>우리들의 가장 아름다웠던 순산</p>
+                </div>
+                
+            </div>
+            <div class="thumbnail-container">
+                <div class="thumbnails">
+                    <img class="thumbnail active" src="images/img01.png" alt="Thumbnail 1">
+                    <img class="thumbnail" src="images/img02.JPG" alt="Thumbnail 2">
+                    <img class="thumbnail" src="images/img03.JPG" alt="Thumbnail 3">
+                    <img class="thumbnail" src="images/img04.JPG" alt="Thumbnail 4">
+                    <img class="thumbnail" src="images/img05.JPG" alt="Thumbnail 5">
+                    </div>
+            </div>
+        </div>
+        
+        <div id="disqus_thread"></div>
+        <script>
+            // 이 블록은 Disqus가 댓글을 로드하는 데 필요한 설정 변수입니다.
+            // **이 var disqus_config = function() { ... }; 블록 위아래에 있는 모든 주석을 제거해야 합니다.**
+            var disqus_config = function () {
+                this.page.url = window.location.href;  // 현재 페이지의 URL
+                this.page.identifier = 'hbd_jjh_project'; // 이 페이지의 고유 식별자
+            };
+            
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://hbd-jjh.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        </div>
+    <script id="dsq-count-scr" src="//hbd-jjh.disqus.com/count.js" async></script>
+    </body>
+</html>
+
+
+
+<!-- <div class="guestbook-section">
+                        <h2>메시지</h2>
+                        <p>축하 메시지를 남겨주세요.</p>
+                        <form id="guestbook-form">
+                            <div class="form-group">
+                                <label for="name">이름</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">메시지 내용</label>
+                                <textarea id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit">등록하기</button>
+                        </form>
+
+                        <div class="guestbook-entries" id="guestbook-entries">
+                            </div>
+                        <div class="pagination">
+                            </div>
+                </div> -->  
+
+
+
+                <!-- <script src="script.js"></script> -->
