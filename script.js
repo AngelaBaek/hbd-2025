@@ -1,4 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mainImage = document.getElementById('main-image');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+
+    // 이미지 배열 (교체할 이미지들을 여기에 추가하세요)
+    // 이미지 파일은 'images' 폴더에 넣어두세요.
+    const images = [
+        'images/image1.jpg',
+        'images/image2.jpg',
+        'images/image3.jpg',
+        // 실제 사용할 이미지 파일의 경로를 여기에 추가해야 합니다.
+        // 예: 'images/birthday_cake.jpg', 'images/jihoon_happy.png'
+    ];
+
+    let currentImageIndex = 0; // 현재 보여지는 이미지의 인덱스
+
+    function updateImage() {
+        // 이미지를 찾았고, 이미지 배열이 비어있지 않을 때만 src를 업데이트합니다.
+        if (mainImage && images.length > 0) {
+             mainImage.src = images[currentImageIndex];
+        } else {
+             // 개발자 도구 콘솔에서 이 메시지가 보인다면, 이미지 로딩에 문제가 있는 것입니다.
+             console.error("이미지 요소(mainImage)를 찾을 수 없거나, 'images' 배열에 이미지가 없습니다.");
+        }
+    }
+
+    // 이전 버튼 클릭 이벤트 리스너
+    if (prevButton) { // prevButton이 존재하는지 확인 후 이벤트 리스너 추가
+        prevButton.addEventListener('click', () => {
+            currentImageIndex--; // 인덱스 감소
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1; // 첫 이미지에서 이전 누르면 마지막 이미지로
+            }
+            updateImage(); // 이미지 업데이트
+        });
+    } else {
+        console.error("이전 버튼(.prev-button)을 찾을 수 없습니다.");
+    }
+
+
+    // 다음 버튼 클릭 이벤트 리스너
+    if (nextButton) { // nextButton이 존재하는지 확인 후 이벤트 리스너 추가
+        nextButton.addEventListener('click', () => {
+            currentImageIndex++; // 인덱스 증가
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0; // 마지막 이미지에서 다음 누르면 첫 이미지로
+            }
+            updateImage(); // 이미지 업데이트
+        });
+    } else {
+        console.error("다음 버튼(.next-button)을 찾을 수 없습니다.");
+    }
+
+    // 페이지 로드 시 초기 이미지 설정
+    updateImage();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   // --- Image Gallery Functionality ---
   const displayPhoto = document.getElementById('display-photo');
   const thumbnails = document.querySelectorAll('.thumbnail');

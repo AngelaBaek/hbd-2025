@@ -3,36 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBD</title>
+    <title>Happy Birthday, Jihoon!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <script id="dsq-count-scr" src="//hbd-jjh.disqus.com/count.js" async></script>
 </head>
 <body>
-    <h1 class="main-page-title">축하해! </h1>
-    
     <div class="container">
-        <div class="photo-gallery">
-            <div class="main-photo">
-                <img id="display-photo" src="images/img01.png" alt="Main Wedding Photo">
-                <div class="image-title">
-                    <p>우리들의 가장 아름다웠던 순산</p>
-                </div>
-                
-            </div>
-            <div class="thumbnail-container">
-                <div class="thumbnails">
-                    <img class="thumbnail active" src="images/img01.png" alt="Thumbnail 1">
-                    <img class="thumbnail" src="images/img02.JPG" alt="Thumbnail 2">
-                    <img class="thumbnail" src="images/img03.JPG" alt="Thumbnail 3">
-                    <img class="thumbnail" src="images/img04.JPG" alt="Thumbnail 4">
-                    <img class="thumbnail" src="images/img05.JPG" alt="Thumbnail 5">
-                    </div>
-            </div>
+        <header>
+            <h1 class="highlight-text">Happy Birthday, Jihoon!</h1>
+            <p class="sub-text">July 17 — a day worth celebrating. Today,<br>we celebrate Jihoon's birthday!</p>
+            <p class="sub-text">Let's all send warm wishes for a joyful, laughter-filled year ahead<br>and maybe some good coffee too. ☕🎉</p>
+        </header>
+
+        <main class="image-gallery">
+            <button class="nav-button prev-button">&lt;</button>
+            <img id="main-image" src="images/image1.jpg" alt="Jihoon's Birthday Image">
+            <button class="nav-button next-button">&gt;</button>
+        </main>
+
+        <div class="message-box">
+            <p>Can’t believe it’s your 39th already<br>
+                you still look like you’re in your 20s.<br>
+                Wishing you even more happiness, more peace, <br>
+                and lots of small joys ahead.<br>
+                <br><br>
+                With love, 백이</p>
         </div>
-        
         <div id="disqus_thread"></div>
         <script>
-            // 이 블록은 Disqus가 댓글을 로드하는 데 필요한 설정 변수입니다.
-            // **이 var disqus_config = function() { ... }; 블록 위아래에 있는 모든 주석을 제거해야 합니다.**
             var disqus_config = function () {
                 this.page.url = window.location.href;  // 현재 페이지의 URL
                 this.page.identifier = 'hbd_jjh_project'; // 이 페이지의 고유 식별자
@@ -46,35 +50,7 @@
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        
-        </div>
     <script id="dsq-count-scr" src="//hbd-jjh.disqus.com/count.js" async></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
-
-
-
-<!-- <div class="guestbook-section">
-                        <h2>메시지</h2>
-                        <p>축하 메시지를 남겨주세요.</p>
-                        <form id="guestbook-form">
-                            <div class="form-group">
-                                <label for="name">이름</label>
-                                <input type="text" id="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">메시지 내용</label>
-                                <textarea id="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit">등록하기</button>
-                        </form>
-
-                        <div class="guestbook-entries" id="guestbook-entries">
-                            </div>
-                        <div class="pagination">
-                            </div>
-                </div> -->  
-
-
-
-                <!-- <script src="script.js"></script> -->
