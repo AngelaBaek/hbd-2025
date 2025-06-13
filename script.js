@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 이미지 배열 (교체할 이미지들을 여기에 추가하세요)
     // 이미지 파일은 'images' 폴더에 넣어두세요.
     const images = [
-        'https://github.com/AngelaBaek/hbd-2025/blob/main/images/image1.jpg',
-        'https://github.com/AngelaBaek/hbd-2025/blob/main/images/image2.jpg',
-        'https://github.com/AngelaBaek/hbd-2025/blob/main/images/image3.jpg',
+        '/images/image1.jpg',
+        '/images/image2.jpg',
+        '/images/image3.jpg',
         // 실제 사용할 이미지 파일의 경로를 여기에 추가해야 합니다.
         // 예: 'images/birthday_cake.jpg', 'images/jihoon_happy.png'
     ];
