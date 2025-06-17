@@ -1,59 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Image Gallery Functionality ---
+
     const mainImage = document.getElementById('main-image');
     const prevButton = document.querySelector('.prev-button');
     const nextButton = document.querySelector('.next-button');
+    const imageDescriptionElement = document.getElementById('current-image-description'); // 설명 p 태그 가져오기
 
-    // 이미지 배열 (교체할 이미지들을 여기에 추가하세요)
-    // 이미지 파일은 'images' 폴더에 넣어두세요.
+    // 이미지 배열 (경로와 설명을 함께 포함)
     const images = [
-        'images/image1.JPG',
-        'images/image2.JPG',
-        'images/image3.JPG',
-        'images/image4.JPG',
-        'images/image5.JPG',
-        'images/image6.JPG',
+        { src: 'images/image1.JPG', description: '생일 축하 케이크.' },
+        { src: 'images/image2.JPG', description: '2023 장마철 제주도에서' },
+        { src: 'images/image3.JPG', description: '2025 첫 목포 여행 : 재미는 쏘쏘하지만 사진은 남기기' },
+        { src: 'images/image4.JPG', description: '2024 부산 여행 : 빗소리 들으며 힐링하던 날' },
+        { src: 'images/image5.JPG', description: '2024 교토 여행 : 그냥 딱봐도 한국인 두 명' },
+        { src: 'images/image6.JPG', description: '2019 지금은 낯선 뽀송한 JH, 도대체 무슨 일이 있던거야' },
     ];
 
-    let currentImageIndex = 0; // 현재 보여지는 이미지의 인덱스
+    let currentImageIndex = 0;
 
     function updateImage() {
-        // 이미지를 찾았고, 이미지 배열이 비어있지 않을 때만 src를 업데이트합니다.
         if (mainImage && images.length > 0) {
-             mainImage.src = images[currentImageIndex];
+             mainImage.src = images[currentImageIndex].src; // src 속성 사용
+             // 이미지 설명 업데이트
+             if (imageDescriptionElement) {
+                 imageDescriptionElement.textContent = images[currentImageIndex].description;
+             }
         } else {
-             // 개발자 도구 콘솔에서 이 메시지가 보인다면, 이미지 로딩에 문제가 있는 것입니다.
              console.error("이미지 요소(mainImage)를 찾을 수 없거나, 'images' 배열에 이미지가 없습니다.");
         }
     }
 
     // 이전 버튼 클릭 이벤트 리스너
-    if (prevButton) { // prevButton이 존재하는지 확인 후 이벤트 리스너 추가
+    if (prevButton) {
         prevButton.addEventListener('click', () => {
-            currentImageIndex--; // 인덱스 감소
+            currentImageIndex--;
             if (currentImageIndex < 0) {
-                currentImageIndex = images.length - 1; // 첫 이미지에서 이전 누르면 마지막 이미지로
+                currentImageIndex = images.length - 1;
             }
-            updateImage(); // 이미지 업데이트
+            updateImage();
         });
-    } else {
-        console.error("이전 버튼(.prev-button)을 찾을 수 없습니다.");
     }
 
     // 다음 버튼 클릭 이벤트 리스너
-    if (nextButton) { // nextButton이 존재하는지 확인 후 이벤트 리스너 추가
+    if (nextButton) {
         nextButton.addEventListener('click', () => {
-            currentImageIndex++; // 인덱스 증가
+            currentImageIndex++;
             if (currentImageIndex >= images.length) {
-                currentImageIndex = 0; // 마지막 이미지에서 다음 누르면 첫 이미지로
+                currentImageIndex = 0;
             }
-            updateImage(); // 이미지 업데이트
+            updateImage();
         });
-    } else {
-        console.error("다음 버튼(.next-button)을 찾을 수 없습니다.");
     }
 
-    // 페이지 로드 시 초기 이미지 설정
+    // 페이지 로드 시 초기 이미지 및 설명 설정
     updateImage();
 
     // --- Guestbook Functionality (Keep this as is, assuming it works as intended) ---

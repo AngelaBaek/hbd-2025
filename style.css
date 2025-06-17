@@ -157,6 +157,65 @@ header h1 {
     transform-origin: 50% -100%; /* 회전을 위한 중심점 설정 */
 }
 
+/* image-wrapper: 이미지와 설명을 감싸는 컨테이너 */
+.image-wrapper {
+    position: relative; /* 자식 요소인 설명 div를 위치시키기 위해 필요 */
+    display: flex; /* 이미지가 가운데 정렬되도록 */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 설명이 wrapper 밖으로 나가지 않도록 */
+    /* .image-gallery img 에 설정된 max-width, height, max-height를 이 wrapper로 옮겨주는 것이 좋습니다. */
+    max-width: 100%;
+    height: auto;
+    max-height: 550px; /* img와 동일한 최대 높이 */
+    border: 1px solid #444444; /* 이미지 테두리색 어둡게 */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* 이미지 그림자 강조 */
+}
+
+/* 기존 .image-gallery img 스타일에서 max-width, height, max-height, border, box-shadow 제거 */
+/* 대신 .image-wrapper 내 img에 비율 유지만 적용 */
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* image-description: 이미지 설명 오버레이 */
+.image-description {
+    position: absolute; /* 이미지 위에 겹치도록 */
+    bottom: 0; /* 이미지 아래쪽에 위치 */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 배경 */
+    color: #ffffff; /* 흰색 글씨 */
+    padding: 15px 20px;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+    transform: translateY(100%); /* 기본적으로 아래로 숨김 */
+    transition: transform 0.3s ease-out; /* 부드러운 애니메이션 */
+    opacity: 0; /* 처음에는 투명하게 */
+    text-align: center;
+    display: flex; /* 텍스트 정렬을 위해 flexbox 사용 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    min-height: 50px; /* 설명 최소 높이 */
+}
+
+/* image-wrapper에 마우스 호버 시 설명 표시 */
+.image-wrapper:hover .image-description {
+    transform: translateY(0); /* 위로 올라와 보이게 함 */
+    opacity: 1; /* 투명도 1로 변경 */
+}
+
+/* 폰트 크기 및 스타일 조정 (선택 사항) */
+.image-description p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
 @keyframes fall {
     0% {
         transform: translateY(-20px) rotate(0deg);
@@ -207,6 +266,14 @@ header h1 {
         padding: 15px;
         margin-top: 25px;
         font-size: 0.85em;
+    }
+    .image-description {
+        /* 모바일에서는 호버 없이도 항상 보이도록 할 경우 */
+        /* opacity: 1;
+        transform: translateY(0); */
+        /* 또는 마우스 호버 이벤트를 사용하지 않으려면 JavaScript에서 다른 로직을 적용해야 합니다. */
+        padding: 10px 15px;
+        font-size: 0.8em;
     }
 }
 
