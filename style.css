@@ -238,7 +238,7 @@ header h1 {
 
     header h1 {
         font-size: 2em;
-        line-height: 1.2em;
+        line-height: 1em;
     }
 
     .sub-text {
@@ -280,7 +280,7 @@ header h1 {
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.8em;
-        line-height: 0.7em;
+        line-height: 0.5em;
     }
 
     .sub-text {
